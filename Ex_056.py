@@ -1,8 +1,20 @@
+#Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas. No final do programa, mostre:
+#a média de idade do grupo, qual é o nome do homem mais velho e quantas mulheres têm menos de 20 anos.
 AddAge = 0
-for i in range(4):
-    Name = input('Digite o Nome: ')
-    Age = int(input('Digite o valor da idade: '))
-    Gender = input('Digite o Gênero(M,F): ').upper()
+MaxAge = 0
+Less20 = 0
+for i in range(1,5):
+    print(f'-------{i} Pessoa-------')
+    Name = input('Nome: ')
+    Age = int(input('Idade: '))
+    Gender = input('Gênero(M,F): ').upper()
+    if Gender == 'M':
+        if MaxAge < Age:
+            MaxAge = Age
+    if Gender == 'F' and Age < 20:
+        Less20 = Less20 + 1
     AddAge =AddAge + Age
     
-print(f' A Média das idade é {AddAge/4}')
+print(f'A Média das idade é {AddAge/4:.1f}')
+print(f'A Pessoa com maior idade {MaxAge}')
+print(f'Há {Less20} mulheres com menos de 20 anos')
