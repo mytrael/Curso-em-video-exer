@@ -5,9 +5,9 @@ MaxAge = 0
 Less20 = 0
 for i in range(1,5):
     print(f'-------{i} Pessoa-------')
-    Name = input('Nome: ')
+    Name = input('Nome: ').strip().upper()
     Age = int(input('Idade: '))
-    Gender = input('Gênero(M,F): ').upper()
+    Gender = input('Gênero(M,F): ').upper().strip()
     if Gender == 'M':
         if MaxAge < Age:
             MaxAge = Age
